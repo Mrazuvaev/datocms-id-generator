@@ -11,17 +11,15 @@ import './style.sass';
 
 export default class Main extends Component {
   static propTypes = {
-    fieldValue: PropTypes.bool.isRequired,
+    fieldValue: PropTypes.string,
   }
 
   render() {
     const { fieldValue } = this.props;
-    const id = Math.random();
 
     return (
-      <div className="container">
-        {id}
-        {JSON.stringify(fieldValue)}
+      <div>
+        <input type="text" value={fieldValue || ''} onChange={() => {}} />
       </div>
     );
   }
