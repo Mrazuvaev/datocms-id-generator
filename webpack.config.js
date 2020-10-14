@@ -4,7 +4,7 @@ const HtmlWebpackTagsPlugin = require('html-webpack-tags-plugin');
 const isProduction = process.env.NODE_ENV === 'production';
 
 module.exports = {
-  entry: __dirname + '/src/index.js',
+  entry: __dirname + '/src/index.jsx',
   mode: process.env.NODE_ENV,
   output: {
     path: __dirname + '/dist',
@@ -19,16 +19,15 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.jsx?$/,
         include: __dirname + '/src',
         loader: 'eslint-loader',
         enforce: 'pre',
       },
       {
-        test: /\.js$/,
+        test: /\.jsx?$/,
         exclude: /(node_modules|bower_components)/,
-        use: { loader: 'babel-loader' }
-      },
+        use: { loader: 'babel-loader' } },
       {
         test: /\.sass$/,
         use: [
@@ -37,11 +36,21 @@ module.exports = {
           "sass-loader"
         ]
       },
+      {
+        test: /\.svg/,
+        use: {
+          loader: 'svg-url-loader',
+          options: {}
+        }
+      },
     ],
+  },
+  resolve: {
+    extensions: ['.js', '.jsx'],
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'DatoCMS Plugin',
+      title: 'DatoCMS plugin',
       minify: isProduction,
     }),
     new HtmlWebpackTagsPlugin({

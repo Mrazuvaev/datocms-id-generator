@@ -1,4 +1,4 @@
-# datocms-plugin-id-generator DatoCMS plugin
+# Id Generator DatoCMS plugin
 
 Generate unique Ids
 

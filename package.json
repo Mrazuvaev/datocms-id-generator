@@ -5,7 +5,7 @@
   "description": "Generate unique Ids",
   "main": "index.js",
   "scripts": {
-    "start": " webpack-dev-server --port 5000",
+    "start": "webpack-dev-server --port 5000",
     "dist": "NODE_ENV=production webpack --progress",
     "addToProject": "yo datocms-plugin:add-to-project",
     "prepublishOnly": "rimraf lib dist && mkdir dist && npm run dist",
@@ -17,18 +17,7 @@
     "datocms-plugin",
     "field-editor",
     "text-field",
-    "boolean-field",
-    "float-field",
-    "integer-field",
-    "string-field",
-    "links-field",
-    "link-field",
-    "date-field",
-    "date-time-field",
-    "video-field",
-    "color-field",
-    "seo-field",
-    "lat-lon-field"
+    "string-field"
   ],
   "files": [
     "dist",
@@ -37,25 +26,14 @@
   "author": "Mrazuvaev <mikhail.razuvaev@emergn.com>",
   "license": "ISC",
   "datoCmsPlugin": {
-    "title": "datocms-plugin-id-generator",
+    "title": "Id Generator",
     "previewImage": "docs/preview.gif",
     "coverImage": "docs/cover.png",
     "entryPoint": "dist/index.html",
     "pluginType": "field_editor",
     "fieldTypes": [
       "text",
-      "boolean",
-      "float",
-      "integer",
-      "string",
-      "links",
-      "link",
-      "date",
-      "date_time",
-      "video",
-      "color",
-      "seo",
-      "lat_lon"
+      "string"
     ],
     "parameters": {
       "global": [
@@ -72,6 +50,12 @@
     }
   },
   "devDependencies": {
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-react": "^7.11.0",
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
+    "@babel/plugin-proposal-decorators": "^7.1.2",
+    "@babel/preset-react": "^7.0.0",
     "@babel/cli": "^7.0.0-beta.54",
     "@babel/core": "^7.0.0-beta.54",
     "@babel/preset-env": "^7.0.0-beta.54",
@@ -89,15 +73,20 @@
     "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "^0.4.3",
     "node-sass": "^4.9.3",
+    "sass-loader": "^7.1.0",
     "serve": "^10.0.2",
     "style-loader": "^0.23.0",
     "webpack": "^4.16.1",
     "webpack-cli": "^3.1.0",
     "webpack-dev-server": "^3.1.10",
-    "yo": "^3.1.1",
-    "sass-loader": "^10.0.3"
+    "yo": "^3.1.1"
   },
   "dependencies": {
-    "html-webpack-tags-plugin": "^2.0.17"
+    "classname": "^0.0.0",
+    "datocms-client": "^3.1.1",
+    "html-webpack-tags-plugin": "^2.0.17",
+    "prop-types": "^15.6.2",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2"
   }
 }
