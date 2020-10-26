@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --port 5000",
-    "dist": "NODE_ENV=production webpack --progress",
+    "dist": "webpack --progress",
     "addToProject": "yo datocms-plugin:add-to-project",
     "prepublishOnly": "rimraf lib dist && mkdir dist && npm run dist",
     "lint": "eslint \"./src/*.{js,jsx}\"",
@@ -41,7 +41,7 @@
           "id": "developmentMode",
           "label": "Development mode",
           "type": "boolean",
-          "required": true,
+          "required": false,
           "default": false,
           "hint": "Shows debug messages in console"
         }
